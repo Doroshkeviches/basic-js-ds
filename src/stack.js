@@ -21,14 +21,17 @@ const { NotImplementedError } = require('../extensions/index.js');
 
   pop() {
     if(this.arr.length == 0) return undefined
-    let res = this.arr[this.arr.length - 1]
+    let result = this.arr[this.arr.length - 1]
     this.arr = this.arr.slice(0, this.arr.length - 1)
-    return res
+    return result
   }
 
   peek() {
-    if(this.arr.length == 0) return undefined
-    return this.arr[this.arr.length - 1]
+    if(this.arr.length == 0){
+      return undefined
+    } else{
+      return this.arr[this.arr.length - 1]
+    }
   }
 }
 

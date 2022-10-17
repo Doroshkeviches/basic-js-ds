@@ -15,24 +15,29 @@ const { ListNode } = require('../extensions/index.js');
  */
  
  class Queue {
-  q = null;
+  el = null;
 
   getUnderlyingList() {
-    return this.q
+    return this.el
   }
 
   enqueue(value) {
-    let el = new ListNode(value)
-    if(!this.q) {this.q = el; return}
-    let last = this.q
-    while(last.next) { last = last.next }
-    last.next = el
+    let newListNode = new ListNode(value)
+    if(!this.el) {
+      this.el = newListNode;
+       return;
+      }
+    let last = this.el;
+    while(last.next) { 
+      last = last.next; 
+  }
+    last.next = newListNode;
   }
 
   dequeue() {
-    let val = this.q.value
-    this.q = this.q.next
-    return val
+    let data = this.el.value
+    this.el = this.el.next
+    return data
   }
 }
 

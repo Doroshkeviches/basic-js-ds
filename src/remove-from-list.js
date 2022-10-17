@@ -41,10 +41,10 @@ const { NotImplementedError } = require('../extensions/index.js');
     return []
   }
   let res = new ListNode(arr[0])
-  let cur = res
+  let current = res
   for(let i = 1; i < arr.length; i++){
-    cur.next = new ListNode(arr[i])
-    cur = cur.next
+    current.next = new ListNode(arr[i])
+    current = current.next
   }
   return res
 }
